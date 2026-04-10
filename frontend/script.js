@@ -1,6 +1,6 @@
 // NOTE: When deploying your backend to Render, update this URL to your Render deployment URL.
 // Example: const API_BASE_URL = 'https://my-resume-backend.onrender.com';
-const API_BASE_URL = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' ? 'http://127.0.0.1:5000' : 'https://YOUR-RENDER-BACKEND-URL.onrender.com';
+const API_BASE_URL = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' ? 'http://127.0.0.1:5000' : 'https://jobrole-1.onrender.com';
 
 async function analyzeResume() {
     const textStr = document.getElementById('resumeText').value;
