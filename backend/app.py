@@ -39,7 +39,10 @@ swagger_template = {
 }
 
 swagger = Swagger(app, config=swagger_config, template=swagger_template)
-
+@app.route('/')
+def home():
+    return jsonify({"message": "Resume AI API is running", "docs": "/docs"}), 200
+    
 
 @app.route('/analyze', methods=['POST'])
 @swag_from({
