@@ -4,3 +4,4 @@ PyPDF2>=3.0.1
 scikit-learn
 gunicorn>=21.2.0
 numpy
+flasgger==0.9.7.1
