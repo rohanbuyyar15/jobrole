@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis & Predictor</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load modern font for premium feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Resume Analyzer</h1>
+            <p>Predict job roles & discover skill gaps using NLP & ML</p>
+        </header>
+
+        <main>
+            <!-- 9. FRONTEND: Simple UI Text Input and Submit Button -->
+            <div class="input-section">
+                <textarea id="resumeText" placeholder="Paste your resume text here... &#10;(Make sure to include headers like Experience, Projects, Skills)"></textarea>
+                <button id="analyzeBtn" onclick="analyzeResume()">Analyze Resume</button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Analyzing text with TF-IDF & Logistic Regression...</p>
+            </div>
+
+            <!-- Error Message Holder -->
+            <div id="error-msg" class="hidden error"></div>
+
+            <!-- 10. OUTPUT FORMATting section -->
+            <div id="results" class="hidden">
+                <div class="card result-header">
+                    <h2>Analysis Results</h2>
+                </div>
+
+                <div class="grid">
+                    <div class="card prediction-card">
+                        <h3>Job Role Predictions (Top 3)</h3>
+                        <ul id="rolesList"></ul>
+                    </div>
+
+                    <div class="card score-card">
+                        <h3>Match Score</h3>
+                        <div class="score-circle">
+                            <span id="matchScore">0</span>%
+                        </div>
+                        <p id="scoreRoleText"></p>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="card sections-card">
+                        <h3>Section Analysis</h3>
+                        <ul id="sectionsList"></ul>
+                    </div>
+
+                    <div class="card missing-card">
+                        <h3>Missing Skills</h3>
+                        <div id="missingSkillsTags" class="tags"></div>
+                    </div>
+                </div>
+
+                <div class="card suggestions-card">
+                    <h3>Actionable Suggestions</h3>
+                    <ul id="suggestionsList"></ul>
+                </div>
+
+                <div class="card roadmap-card">
+                    <h3>Improvement Roadmap</h3>
+                    <ul id="roadmapList"></ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
